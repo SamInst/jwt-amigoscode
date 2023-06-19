@@ -1,5 +1,8 @@
-package com.example.security.authentication;
+package com.example.security.controller;
 
+import com.example.security.authentication.AuthenticationRequest;
+import com.example.security.authentication.AuthenticationResponse;
+import com.example.security.authentication.RegisterRequest;
 import com.example.security.services.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +23,6 @@ public class AuthenticationController {
     ){
         return ResponseEntity.ok(authenticationService.register(request));
     }
-
-
 
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticateRequest(
